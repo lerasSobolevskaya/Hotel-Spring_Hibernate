@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+	<class name="by.sobol.hotel.domain.User" table="users">
+		<id name="id" type="int">
+			<column name="user_id" />
+			<generator class="increment"></generator>
+		</id>
+		<property name="name" type="java.lang.String">
+			<column name="name"></column>
+		</property>
+		<property name="surname" type="java.lang.String">
+			<column name="surname"></column>
+		</property>
+		<property name="passNum" type="java.lang.String">
+			<column name="pass_num"></column>
+		</property>
+		<property name="login" type="java.lang.String">
+			<column name="login"></column>
+		</property>
+		<property name="pass" type="java.lang.String">
+			<column name="password"></column>
+		</property>
+		<property name="role" type="java.lang.String">
+			<column name="role"></column>
+		</property>
+
+
+	</class>
+
+</hibernate-mapping>

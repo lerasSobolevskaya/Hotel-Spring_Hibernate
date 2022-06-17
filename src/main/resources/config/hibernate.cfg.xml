@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration SYSTEM 
+"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+
+		<property name="hibernate.dialect">
+			org.hibernate.dialect.MySQLDialect
+		</property>
+
+		<property name="hibernate.connection.driver_class">
+			com.mysql.cj.jdbc.Driver
+		</property>
+		<property name="hibernate.connection.url">
+			jdbc:mysql://localhost/hotel1?useTimezone=true&amp;serverTimezone=UTC
+		</property>
+		<property name="hibernate.connection.username">
+			root
+		</property>
+		<property name="show_sql">true</property>
+		<property name="hibernate.connection.password">
+			root
+		</property>
+
+		<mapping class="by.sobol.hotel.domain.Order" />
+		<mapping class="by.sobol.hotel.domain.User" />
+		<mapping class="by.sobol.hotel.domain.Room" />
+		<mapping class="by.sobol.hotel.domain.Type" />
+		<mapping class="by.sobol.hotel.domain.Bills" />
+
+	</session-factory>
+</hibernate-configuration>

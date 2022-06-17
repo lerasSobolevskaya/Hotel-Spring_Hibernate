@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="roomService"
+		class="by.sobol.hotel.service.impl.RoomServiceImpl" scope="singleton">
+		<property name="roomDao" ref="roomDao" />
+	</bean>
+	<bean id="userService"
+		class="by.sobol.hotel.service.impl.UserServiceImpl" scope="singleton">
+		<property name="userDao" ref="userDao" />
+	</bean>
+</beans>

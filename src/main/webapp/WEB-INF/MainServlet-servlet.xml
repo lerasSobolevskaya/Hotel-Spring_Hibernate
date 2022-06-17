@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans.xsd 
+	http://www.springframework.org/schema/context 
+	http://www.springframework.org/schema/context/spring-context-4.0.xsd
+	http://www.springframework.org/schema/mvc 
+	http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd">
+
+	<mvc:annotation-driven />
+	<mvc:resources location="/resources/**" mapping="/resources/" />
+	<context:component-scan base-package="by.sobol.hotel" />
+	<bean
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/WEB-INF/jsp/" />
+		<property name="suffix" value=".jsp" />
+	</bean>
+	<bean id="sessionFactory" class="by.sobol.hotel.dao.hbn.SessionFactoryManager"></bean>
+	<bean id="roomDao" class="by.sobol.hotel.dao.hbn.RoomDaoHibernateImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="userDao" class="by.sobol.hotel.dao.hbn.UserDaoHibernateImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="typeDao" class="by.sobol.hotel.dao.hbn.TypeDaoHibernateImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="orderDao" class="by.sobol.hotel.dao.hbn.OrderDaoHibernateImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="roomService" class="by.sobol.hotel.service.impl.RoomServiceImpl">
+		<property name="roomDao" ref="roomDao"></property>
+	</bean>
+	<bean id="userService" class="by.sobol.hotel.service.impl.UserServiceImpl">
+		<property name="userDao" ref="userDao"></property>
+	</bean>
+	<bean id="typeService" class="by.sobol.hotel.service.impl.TypeServiceImpl">
+		<property name="typeDao" ref="typeDao"></property>
+	</bean>
+	<bean id="orderService" class="by.sobol.hotel.service.impl.OrderServiceImpl">
+		<property name="orderDao" ref="orderDao"></property>
+	</bean>
+</beans>

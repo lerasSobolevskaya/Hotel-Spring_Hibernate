@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+	<class name="by.sobol.hotel.domain.Order" table="orders">
+		<id name="id" type="int">
+			<column name="order_id" />
+			<generator class="increment"></generator>
+		</id>
+
+		<property name="startDate">
+			<column name="start_date"></column>
+		</property>
+		<property name="endDate">
+			<column name="end_date"></column>
+		</property>
+		<property name="apartmentType">
+			<column name="apartment_type"></column>
+		</property>
+		<property name="userId">
+			<column name="user_id"></column>
+		</property>
+		<property name="roomId">
+			<column name="room_id"></column>
+		</property>
+		<property name="refusal">
+			<column name="refusal"></column>
+		</property>
+		
+	</class>
+
+</hibernate-mapping>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+	<class name="by.sobol.hotel.domain.Room" table="rooms">
+		<id name="id" type="int">
+			<column name="room_id" />
+			<generator class="increment"></generator> 
+		</id>
+
+		<property name="number" type="int">
+			<column name="number"></column>
+		</property>
+		<property name="price" type="int">
+			<column name="price"></column>
+		</property>
+		<property name="numberOfSeats">
+			<column name="number_of_seats">
+			</column>
+		</property>
+	<property name="apartmentType">
+		<column name="type_id">
+		</column>
+	</property>
+		<property name="status">
+			<column name="status">
+			</column>
+		</property>
+	</class>
+
+ </hibernate-mapping>
